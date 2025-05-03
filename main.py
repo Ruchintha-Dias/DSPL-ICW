@@ -12,10 +12,6 @@ df = load_data()
 
 st.set_page_config(page_title="Sri Lanka Bus Route Dashboard", layout="wide")
 
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
-    st.write(data)
-
 # Sidebar Filters
 st.sidebar.header("🔎 Filter Bus Routes")
 route_filter = st.sidebar.selectbox("Select Route No:", options=["All"] + sorted(df["Route No."].unique().tolist()))
@@ -38,6 +34,11 @@ filtered_df = filtered_df[
 # Dashboard Header
 st.title("🚌 Sri Lanka Inter-Provincial Bus Routes Dashboard")
 st.markdown("An interactive dashboard analyzing **normal inter-provincial bus operations** in Sri Lanka (as of May 2017).")
+
+# Rawv Data
+if st.checkbox('Show raw data'):
+    st.subheader('Raw data')
+    st.write(df)
 
 # Key Metrics
 col1, col2, col3, col4, col5 = st.columns(5)
