@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 # Load data with caching
 @st.cache_data
 def load_data():
-    df = pd.read_csv("cleaned_dataset.csv")
+    df = pd.read_csv("https://raw.githubusercontent.com/Ruchintha-Dias/DSPL-ICW/main/cleaned_dataset.csv")
     return df
 
 # Set page config
